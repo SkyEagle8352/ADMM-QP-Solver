@@ -21,7 +21,7 @@ This project is licensed under the GPL-3.0 License. For more details, please see
 
 Clone this repository to your local machine:
 ```bash
-git clone https://github.com/your-username/ADMM-QP-Solver.git
+git clone https://github.com/SkyEagle8352/ADMM-QP-Solver.git
 ```
 
 Run test.m, which includes six different test cases.
