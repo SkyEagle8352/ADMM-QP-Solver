@@ -20,7 +20,7 @@ function [x, info] = quadprog_admm(H, f, A, b, lb, ub, x0)
 %    .exitflag - Exit status (0: success, 1: max iterations, 2: error)
 %    .iter - Number of iterations performed
 
-    n = size(H, 1); % 获取问题的维度
+    n = size(H, 1); 
     if nargin >= 5 && ~isempty(lb) && ~isempty(ub)
         nl_cons = length(lb);
         nu_cons = length(ub);
@@ -43,7 +43,7 @@ function [x, info] = quadprog_admm(H, f, A, b, lb, ub, x0)
     if nargin < 7 || isempty(x0)
         x0 = zeros(n, 1);
     end
-    x = x0; % 初始化变量 x
+    x = x0; 
     info.exitflag = 2;
     info.iter = 0;
 
@@ -63,7 +63,7 @@ function [x, info] = quadprog_admm(H, f, A, b, lb, ub, x0)
     end
 
     % Precompute the inverse matrix used in the iterations
-    invMat = inv(H + rho * (A_aug' * A_aug));
+    invMat = (H + rho * (A_aug' * A_aug))\eye(n);
     z = zeros(size(b_aug));
     u = z;
 
