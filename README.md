@@ -35,12 +35,18 @@ x = quadprog_admm(H, f, A, b, lb, ub, x0)
 
 Inputs:
 H - Quadratic coefficient matrix (symmetric, positive definite)
+
 f - Linear coefficient vector
+
 A - Linear inequality constraint matrix (Ax <= b)
+
 b - Right-hand side vector for inequality constraints
+
 lb - Lower bounds for the variables
+
 ub - Upper bounds for the variables
+
 x0 - Initial guess for the variables
 
-utput:
+Output:
 x - Solution vector
